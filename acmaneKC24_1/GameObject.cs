@@ -8,10 +8,18 @@ namespace acmaneKC24_1
 {
     public abstract class GameObject
     {
-        public GameObject(Vector position, char symbol)
+        protected const int KeyDirectionUp = 1;
+        protected const int KeyDirectionDown = 2;
+        protected const int KeyDirectionLeft = 3;
+        protected const int KeyDirectionRigth = 4;
+
+        private World _world;
+
+        public GameObject(Vector position, char symbol, World world)
         {
             Position = position;
             Symbol = symbol;
+            _world = world;
         }
 
         public Vector Position { get; private set; }
@@ -26,6 +34,13 @@ namespace acmaneKC24_1
             Console.Write(Symbol);
         }
 
-        protected void ToChangePosition(Vector move) => Position += move;
+        protected void ToChangePosition(Vector move)
+        {
+            Vector oldPosition = Position;
+            Position += move;
+
+            if (_world.IsWall(Position))
+                Position = oldPosition;
+        }
     }
 }
