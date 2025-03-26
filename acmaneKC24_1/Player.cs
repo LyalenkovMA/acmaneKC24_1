@@ -46,6 +46,7 @@ namespace acmaneKC24_1
             const ConsoleKey KeyLeft = ConsoleKey.LeftArrow;
             const ConsoleKey KeyRigth = ConsoleKey.RightArrow;
 
+
             ConsoleKey key = Console.ReadKey().Key;
 
             switch (key)
