@@ -25,16 +25,16 @@ namespace acmaneKC24_1
             switch (_direction)
             {
                 case KeyDirectionUp:
-                    ToChangePosition(new Vector(0, -1));
+                    ToChangePosition(new Vector(MoveStop, MoveDown));
                     break;
                 case KeyDirectionDown:
-                    ToChangePosition(new Vector(0, 1));
+                    ToChangePosition(new Vector(MoveStop, MoveUp));
                     break;
                 case KeyDirectionLeft:
-                    ToChangePosition(new Vector(-1,0));
+                    ToChangePosition(new Vector(MoveDown,MoveStop));
                     break;
                 case KeyDirectionRigth:
-                    ToChangePosition(new Vector(1,0));
+                    ToChangePosition(new Vector(MoveUp,MoveStop));
                     break;
             }
         }

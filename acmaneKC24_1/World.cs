@@ -22,7 +22,7 @@ namespace acmaneKC24_1
 
         public bool IsWall(Vector vector)
         {
-            return _map[vector.X, vector.Y] == _symbolWall;
+            return _map[vector.Y, vector.X] == _symbolWall;
         }
 
         public bool IsMeal(Vector vector)
